@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-ivory: #F3EDE3;
+    --color-cream: #FAF8F3;
+    --color-sand: #E7DDCE;
+    --color-earth: #49392D;
+    --color-earth-dark: #35281F;
+    --color-sage: #69764C;
+    --color-olive: #78815C;
+    --color-taupe: #D9CDBD;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--color-ivory);
+    color: var(--color-earth);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: #69764C;
+    color: #FAF8F3;
+  }
+}
+
+/* Custom Lenis Smooth Scroll Rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Luxury & Editorial Utilities */
+.editorial-italic {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Subtle Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3EDE3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9CDBD;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #78815C;
+}
+
+/* Mask & Clip-path Reveal Utilities */
+.clip-path-inset-full {
+  clip-path: inset(100% 0% 0% 0%);
+}
+
+.clip-path-inset-none {
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+/* Grain texture overlay for subtle editorial warmth */
+.grain-overlay {
+  background-image: radial-gradient(rgba(73, 57, 45, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Hide scrollbar for clean horizontal scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.reveal-image-smooth {
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+}
+
